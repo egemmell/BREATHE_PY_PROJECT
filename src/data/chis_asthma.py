@@ -25,8 +25,10 @@ from config import SFBA_FIPS, SFBA_NAMES, CA_FIPS, CENSUS_YEAR, CHIS_ADULT_OUT, 
 # =============================================================================
 
 ca_counties = pygris.counties(state=CA_FIPS, year=CENSUS_YEAR)
+
 fips_lookup = (ca_counties[ca_counties["GEOID"].isin(SFBA_FIPS)][["GEOID", "NAME"]]
                .rename(columns={"GEOID": "geoid", "NAME": "lctn_nm"}))
+fips_lookup["geoid"] = fips_lookup["geoid"].str[2:]   # strip "06" prefix → 3-digit county code
 
 # =============================================================================
 # B. CKAN download function
@@ -110,7 +112,8 @@ def clean_chis_asthma(data, age_recode, keep_qflags, otcm_suffix=""):
         lambda r: "06" if r["COUNTY"] == "California" else f"06{r['geoid']}",
         axis=1
     )
-
+    df["lctn_nm"] = df["COUNTY"]   # use COUNTY directly to avoid NaN for California
+    
     return df[["geoid", "geolevl", "lctn_nm", "age_grp", "sex_grp", "race_grp",
                "otcm_nm", "year", "source", "mx_name", "mx", "mx_lower", "mx_upper", "q_flag"]]
 
