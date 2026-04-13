@@ -33,6 +33,16 @@ SFBA_GEOIDS  = _tracts[_tracts["COUNTYFP"].isin(SFBA_FIPS_3)]["GEOID"].tolist()
 
 # Raw data inputs
 SEER_FILE       = "data/raw/population_data/ca.1990_2024.singleages.through89.90plus.txt"
+IHME_AC_FILE    = "data/raw/baseline_health_outcomes/IHME_USA_COD_COUNTY_RACE_ETHN_2000_2019_MX_2019_ALL_BOTH_Y2023M06D12.CSV"
+CHIS_FILE       = "data/raw/baseline_health_outcomes/chis-data-current-asthma-prevalence-by-county-2015-present.csv"
+PLACES_TRACT_FILE   = "data/raw/baseline_health_outcomes/PLACES__Census_Tract_Data__GIS_Friendly_Format___2024_release_20250313.csv"
+PLACES_COUNTY_FILE  = "data/raw/baseline_health_outcomes/PLACES__County_Data__GIS_Friendly_Format___2024_release_20250312.csv"
+USALEEP_FILE    = "data/raw/baseline_health_outcomes/BenMAP_Ready_USALEEP_AllCauseRates_2020.csv"
+ALRI_FILE       = "data/raw/baseline_health_outcomes/ALRI_2019_CS3044.csv"
+IHD_FILE        = "data/raw/baseline_health_outcomes/ihd_mortality_county_2019_CDC.csv"
+LUNG_BOTH_FILE  = "data/raw/baseline_health_outcomes/IHME_USA_LUNG_CANCER_COUNTY_RACE_ETHNICITY_2000_2019_MX_2019_BOTH_Y2025M06D15.CSV"
+LUNG_MALE_FILE  = "data/raw/baseline_health_outcomes/IHME_USA_LUNG_CANCER_COUNTY_RACE_ETHNICITY_2000_2019_MX_2019_MALE_Y2025M06D15.CSV"
+LUNG_FEMALE_FILE = "data/raw/baseline_health_outcomes/IHME_USA_LUNG_CANCER_COUNTY_RACE_ETHNICITY_2000_2019_MX_2019_FEMALE_Y2025M06D15.CSV"
 
 # Processed outputs (scripts 1-9 write here)
 SEER_OUT        = "data/processed/pop_0_17_sex_race_county_2019.parquet"
