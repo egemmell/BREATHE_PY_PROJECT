@@ -49,6 +49,9 @@ IHD_ST_RACE_FILE     = "data/raw/baseline_health_outcomes/ihd_mortality_state_20
 LUNG_BOTH_FILE  = "data/raw/baseline_health_outcomes/IHME_USA_LUNG_CANCER_COUNTY_RACE_ETHNICITY_2000_2019_MX_2019_BOTH_Y2025M06D15.CSV"
 LUNG_MALE_FILE  = "data/raw/baseline_health_outcomes/IHME_USA_LUNG_CANCER_COUNTY_RACE_ETHNICITY_2000_2019_MX_2019_MALE_Y2025M06D15.CSV"
 LUNG_FEMALE_FILE = "data/raw/baseline_health_outcomes/IHME_USA_LUNG_CANCER_COUNTY_RACE_ETHNICITY_2000_2019_MX_2019_FEMALE_Y2025M06D15.CSV"
+POP_FILE     = "data/raw/simulated_population/sfbay-tr_capacity_1_5-20230608_activitysim_data_persons.csv"
+ISRM_FILE    = "data/raw/exposure_data/sfbay-tr-discount-100-20230703_sfbay-tr_capacity_1_5-20230608_All_resultsISRM.csv"
+EXP_POP_OUT  = "data/processed/exposure_population.parquet"
 
 # Processed outputs (scripts 1-9 write here)
 SEER_OUT        = "data/processed/pop_0_17_sex_race_county_2019.parquet"
