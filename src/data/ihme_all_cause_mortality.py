@@ -42,8 +42,8 @@ acm["source"]     = "IHME"
 acm["mx_name"]    = "person-year at risk"
 acm["q_flag"]     = 0
 acm["year"]       = acm["year"].astype(str)
-acm["fips"]       = acm["fips"].astype(str).str.zfill(5)
-
+acm = acm[acm["fips"].notna()]
+acm["fips"] = acm["fips"].astype(float).astype(int).astype(str).str.zfill(5)
 acm = acm[acm["location_name"].isin(SFBA_NAMES)]
 
 # =============================================================================
