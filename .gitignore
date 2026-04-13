@@ -1,0 +1,37 @@
+# Data — raw and processed data not tracked (see DATAINFO.md for sources)
+data/raw/
+data/processed/
+
+# Census boundary files (downloaded at runtime via pygris)
+data/raw/census_boundaries/
+
+# Outputs
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Conda environment
+.conda/
+envs/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.Rproj.user
+
+# Snakemake
+.snakemake/
