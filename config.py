@@ -30,7 +30,8 @@ SEER_FILE       = "data/raw/population_data/ca.1990_2024.singleages.through89.90
 
 # Processed outputs (scripts 1-9 write here)
 SEER_OUT        = "data/processed/pop_0_17_sex_race_county_2019.parquet"
-CHIS_OUT        = "data/processed/asthma_prev_2021_2022.parquet"
+CHIS_ADULT_OUT  = "data/processed/adult_currentasthma_state_county_2021_2022_CHIS.parquet"
+CHIS_CHILD_OUT  = "data/processed/child_currentasthma_state_county_2021_2022_CHIS.parquet"
 PLACES_OUT      = "data/processed/cdc_places_asthma_2019.parquet"
 IHME_AC_OUT     = "data/processed/all_cause_mortality_2019_ihme.parquet"
 USALEEP_OUT     = "data/processed/all_cause_mortality_2020_usaleep.parquet"
