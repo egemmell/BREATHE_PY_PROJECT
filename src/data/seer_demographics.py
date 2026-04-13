@@ -64,6 +64,12 @@ pop = pd.concat([pop, race_total, both_sexes], ignore_index=True)
 pop = (pop.groupby(['fips', 'location_name', 'race_name', 'sex_name', 'year'], as_index=False)
           ['population'].sum()
           .assign(age_name='0-17'))
+pop = pop.rename(columns={
+    "fips":          "geoid",
+    "location_name": "lctn_nm",
+    "race_name":     "race_grp",
+    "sex_name":      "sex_grp"
+})
 print('Step 7 - final pop OK:', len(pop), 'rows')
 
 pop.to_parquet(SEER_OUT, index=False)
