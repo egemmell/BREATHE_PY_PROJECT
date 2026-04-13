@@ -2,12 +2,7 @@
 # Central configuration file for BREATHE HIA pipeline
 # Import this at the top of each script: from config import *
 
-
 import pygris
-
-# SFBA census tract GEOIDs (loaded once here for use across scripts)
-_tracts = pygris.tracts(state=CA_FIPS, year=CENSUS_YEAR)
-SFBA_GEOIDS = _tracts[_tracts["COUNTYFP"].isin(SFBA_FIPS_3)]["GEOID"].tolist()
 
 # San Francisco Bay Area county FIPS codes (9 counties)
 SFBA_FIPS = ["06001", "06013", "06041", "06055", "06075",
@@ -22,16 +17,20 @@ SFBA_NAMES = ["Alameda", "Contra Costa", "Marin", "Napa",
               "San Francisco", "San Mateo", "Santa Clara",
               "Solano", "Sonoma"]
 
-# Named dict linking FIPS to names (useful for joins and labels)
+# Named dict linking FIPS to names
 SFBA_LOOKUP = dict(zip(SFBA_FIPS, SFBA_NAMES))
 
-# State FIPS
-CA_FIPS = "06"
+# State FIPS and census year
+CA_FIPS      = "06"
+CENSUS_YEAR  = 2019
 
-# Census year
-CENSUS_YEAR = 2019
+# SFBA census tract GEOIDs (loaded once here for use across scripts)
+_tracts      = pygris.tracts(state=CA_FIPS, year=CENSUS_YEAR)
+SFBA_GEOIDS  = _tracts[_tracts["COUNTYFP"].isin(SFBA_FIPS_3)]["GEOID"].tolist()
+
 
 # ── File paths ────────────────────────────────────────────────────────────────
+
 # Raw data inputs
 SEER_FILE       = "data/raw/population_data/ca.1990_2024.singleages.through89.90plus.txt"
 
