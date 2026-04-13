@@ -1,8 +1,7 @@
 # BREATHE_PY_PROJECT
 
-**B**ay area **R**espiratory and **E**nvironmental **A**ir **T**ransport **H**ealth **E**valuation
 
-A Health Impact Assessment (HIA) pipeline for the San Francisco Bay Area that estimates how changes in air pollutant concentrations (PM2.5, NO2, black carbon) from a transport scenario affect population health outcomes across demographic strata and geographies.
+Health Impact Assessment (HIA) pipeline to estimate how ambient PM2.5, NO2, black carbon concentrations from modeled transport scenarios affect population health outcomes across demographic strata and geographies.
 
 ---
 
@@ -172,7 +171,7 @@ y = m × P × (1 − exp(−β × Δx))
 ```
 
 Where:
-- `y` = attributable cases (deaths or prevalent cases)
+- `y` = attributable or avoided cases (e.g. avoided deaths or prevalent cases)
 - `m` = baseline rate per person
 - `P` = population count per cell
 - `β` = ln(RR) / concentration increment
